@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "index.schema.json",
+  "title": "Index",
+  "description": "Index items definition",
+  "type": "array",
+  "items": {
+    "properties": {
+      "name": {
+        "description": "Index item display name: a short string",
+        "type": "string"
+      },
+      "icon": {
+        "description": "Index item icon: URL, data string or emoji unicode character",
+        "type": "string"
+      },
+      "tags": {
+        "description": "Index item additional tags (taken into account for search)",
+        "type": "array",
+        "items": {
+          "type": "string",
+          "uniqueItems": true
+        }
+      },
+      "description": {
+        "description": "Index item short description",
+        "type": "string"
+      },
+      "url": {
+        "description": "Index item resource URL",
+        "type": "string"
+      }
+    },
+    "required": [ "name", "icon", "url" ]
+  },
+  "minItems": 1,
+  "uniqueItems": true
+}

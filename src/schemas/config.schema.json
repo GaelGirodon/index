@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "config.schema.json",
+  "title": "Config",
+  "description": "Index page configuration",
+  "type": "object",
+  "properties": {
+    "title": {
+      "description": "Page title: a short string (optional)",
+      "type": "string"
+    },
+    "logo": {
+      "description": "Main logo: a URL or data string (optional)",
+      "type": "string"
+    },
+    "source": {
+      "description": "Configuration and indexes source repository: a URL, e.g. to a Git repository (optional)",
+      "type": "string"
+    },
+    "indexes": {
+      "description": "Available indexes list",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "Index display name: a short string",
+            "type": "string"
+          },
+          "icon": {
+            "description": "Index icon: an emoji unicode character (optional)",
+            "type": "string"
+          },
+          "url": {
+            "description": "Index JSON path: an absolute or relative URL",
+            "type": "string"
+          }
+        },
+        "required": [ "name", "url" ]
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    }
+  }
+}

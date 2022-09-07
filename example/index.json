@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Company website",
+    "icon": "https://company.org/logo.svg",
+    "tags": [ "company", "website", "homepage" ],
+    "description": "Company website homepage",
+    "url": "https://company.org"
+  },
+  {
+    "name": "Git repos",
+    "icon": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iOTciIGhlaWdodD0iOTciPg0KICA8cGF0aCBmaWxsPSIjRjA1MTMzIiBkPSJNOTIuNzEgNDQuNDA4IDUyLjU5MSA0LjI5MWMtMi4zMS0yLjMxMS02LjA1Ny0yLjMxMS04LjM2OSAwbC04LjMzIDguMzMyTDQ2LjQ1OSAyMy4xOWMyLjQ1Ni0uODMgNS4yNzItLjI3MyA3LjIyOSAxLjY4NSAxLjk2OSAxLjk3IDIuNTIxIDQuODEgMS42NyA3LjI3NWwxMC4xODYgMTAuMTg1YzIuNDY1LS44NSA1LjMwNy0uMyA3LjI3NSAxLjY3MSAyLjc1IDIuNzUgMi43NSA3LjIwNiAwIDkuOTU4LTIuNzUyIDIuNzUxLTcuMjA4IDIuNzUxLTkuOTYxIDAtMi4wNjgtMi4wNy0yLjU4LTUuMTEtMS41MzEtNy42NThsLTkuNS05LjQ5OXYyNC45OTdjLjY3LjMzMiAxLjMwMy43NzQgMS44NjEgMS4zMzIgMi43NSAyLjc1IDIuNzUgNy4yMDYgMCA5Ljk1OS0yLjc1IDIuNzQ5LTcuMjA5IDIuNzQ5LTkuOTU3IDAtMi43NS0yLjc1NC0yLjc1LTcuMjEgMC05Ljk1OS42OC0uNjc5IDEuNDY3LTEuMTkzIDIuMzA3LTEuNTM3di0yNS4yM2MtLjg0LS4zNDQtMS42MjUtLjg1My0yLjMwNy0xLjUzNy0yLjA4My0yLjA4Mi0yLjU4NC01LjE0LTEuNTE2LTcuNjk4TDMxLjc5OCAxNi43MTUgNC4yODggNDQuMjIyYy0yLjMxMSAyLjMxMy0yLjMxMSA2LjA2IDAgOC4zNzFsNDAuMTIxIDQwLjExOGMyLjMxIDIuMzExIDYuMDU2IDIuMzExIDguMzY5IDBMOTIuNzEgNTIuNzc5YzIuMzExLTIuMzExIDIuMzExLTYuMDYgMC04LjM3MXoiLz4NCjwvc3ZnPg==",
+    "tags": [ "git", "source", "repositories" ],
+    "description": "Company Git repositories",
+    "url": "https://git.company.org"
+  },
+  {
+    "name": "Documentation",
+    "icon": "📚",
+    "tags": [ "documentation", "book" ],
+    "description": "Company documentations",
+    "url": "https://docs.company.org"
+  }
+]

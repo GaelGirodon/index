@@ -1,0 +1,12 @@
+{
+  "title": "My company",
+  "logo": "https://company.org/logo.svg",
+  "source": "https://git.company.org/index/index",
+  "indexes": [
+    {
+      "name": "Index",
+      "icon": "📕",
+      "url": "index.json"
+    }
+  ]
+}

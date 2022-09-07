@@ -1,0 +1,10 @@
+# .gitignore
+
+node_modules/
+public/*.json
+logs/
+*.log*
+dist/
+*.tar.gz
+.idea/
+.vscode/
