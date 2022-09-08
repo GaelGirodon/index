@@ -8,11 +8,10 @@ featuring:
 - Saving of recently visited websites
 - 🇫🇷 French and 🇬🇧 English translations
 
-> _Use case:_
-> create an entrypoint for personal or company web tools and resources
-> that can be set as a browser home or new tab page.
+> _Use case:_ create an entrypoint page for personal or company web tools
+> and resources that can be set as a browser home or new tab page.
 
-## Usage
+## Install
 
 - Download the [latest release](https://github.com/GaelGirodon/index/releases/latest):
 
@@ -28,6 +27,14 @@ curl -sL "$DOWNLOAD_URL/index.tar.gz" | tar xvz
 - Test the index page with a local web server (e.g. `php -S localhost:8080`,
   `npx http-server`, etc.)
 - Deploy files to a static web server (e.g. GitHub/GitLab Pages)
+
+## Usage
+
+- Select an index to browse using the dropdown
+- Type in the search field to find results
+- Select a result using <kbd>↓</kbd> and <kbd>↑</kbd> keys
+- Open the selected result by pressing the <kbd>Enter</kbd> key<br>
+  or 🖱️ _click_ on a result to open it
 
 ## License
 
