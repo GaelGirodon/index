@@ -1,5 +1,7 @@
 <script>
   import { get } from "svelte/store";
+
+  import _ from "../lib/i18n";
   import { config, items, query, results, selectedResultItem } from "../lib/store";
   import * as storage from "../lib/storage";
   import { navigate } from "../lib/navigation";
@@ -80,6 +82,7 @@
   <select
     name="index"
     id="index-select"
+    title={_("index-select.desc")}
     bind:value={selectedIndex}
     on:change={() => loadIndex(selectedIndex)}
     disabled={$config.indexes?.length <= 1}
@@ -93,11 +96,12 @@
   </select>
   <!-- Search box -->
   <div class="search-icon">
-    <img src={search} alt="Magnifying glass search icon" />
+    <img src={search} alt={_("search-bar.icon.alt")} />
   </div>
   <input
     type="text"
-    placeholder="Search"
+    title={_("search-bar.desc")}
+    placeholder={_("search-bar.placeholder")}
     bind:value={localQuery}
     bind:this={searchInput}
     on:input={() => query.set(localQuery)}

@@ -1,10 +1,11 @@
 <script>
+  import _ from "../lib/i18n";
   import { config, query } from "../lib/store";
 </script>
 
 <div class="spacer" class:offset={!$query} />
 {#if $config.logo}
-  <img src={$config.logo} alt="Logo" class="logo" />
+  <img src={$config.logo} alt={_("logo.alt")} class="logo" />
 {/if}
 
 <style>

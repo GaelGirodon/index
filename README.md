@@ -1,11 +1,12 @@
 # Index
 
-A simple, lightweight (~13 KiB _gzipped_) and static websites index page
+A simple, lightweight (~14 KiB _gzipped_) and static websites index page
 featuring:
 
 - A search bar using a fuzzy search algorithm
 - Support for multiple websites indexes
 - Saving of recently visited websites
+- 🇫🇷 French and 🇬🇧 English translations
 
 > _Use case:_
 > create an entrypoint for personal or company web tools and resources
@@ -24,10 +25,9 @@ curl -sL "$DOWNLOAD_URL/index.tar.gz" | tar xvz
   ([schema](./src/schemas/config.schema.json))
 - Create an index file: [`index.json`](./example/index.json)
   ([schema](./src/schemas/index.schema.json))
-- Serve files:
-  - Start a web server (e.g. using `php -S localhost:8080`,
-    `npx http-server`, etc.), or,
-  - Deploy files to a static web server (e.g. GitHub/GitLab Pages)
+- Test the index page with a local web server (e.g. `php -S localhost:8080`,
+  `npx http-server`, etc.)
+- Deploy files to a static web server (e.g. GitHub/GitLab Pages)
 
 ## License
 

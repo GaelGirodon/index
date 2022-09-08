@@ -1,9 +1,11 @@
 <script>
   import { fly } from "svelte/transition";
-  import settings from "../assets/settings.svg";
-  import close from "../assets/close.svg";
+
+  import _ from "../lib/i18n";
   import { config } from "../lib/store";
   import { clear } from "../lib/storage";
+  import settings from "../assets/settings.svg";
+  import close from "../assets/close.svg";
 
   /**
    * true if the settings panel is displayed.
@@ -21,13 +23,13 @@
 
 {#if opened}
   <div class="settings card" transition:fly={{ y: -32, duration: 250 }}>
-    <div class="title">Settings</div>
-    <button class="btn" on:click={forget} title="Clear local storage and reload">
-      🗑️ Forget me
+    <div class="title">{_("settings.title")}</div>
+    <button class="btn" title={_("settings.forget-me.desc")} on:click={forget}>
+      🗑️ {_("settings.forget-me")}
     </button>
     {#if $config.source}
-      <a class="btn" title="Contribute to this page" href={$config.source}>
-        🖊️ Contribute
+      <a class="btn" title={_("settings.contribute.desc")} href={$config.source}>
+        🖊️ {_("settings.contribute")}
       </a>
     {/if}
   </div>
@@ -36,9 +38,9 @@
 <button
   class="settings-toggle"
   on:click={() => (opened = !opened)}
-  title={opened ? "Close settings" : "Open settings"}
+  title={opened ? _("settings.toggle.close") : _("settings.toggle.open")}
 >
-  <img src={opened ? close : settings} alt="Settings toggle icon" />
+  <img src={opened ? close : settings} alt={_("settings.toggle.icon.alt")} />
 </button>
 
 <style>

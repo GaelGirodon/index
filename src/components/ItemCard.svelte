@@ -1,4 +1,5 @@
 <script>
+  import _ from "../lib/i18n";
   import { navigate } from "../lib/navigation";
   import Icon from "./Icon.svelte";
 
@@ -18,12 +19,18 @@
   export let selected = false;
 </script>
 
-<a class="item card" href={item.url} class:selected on:click|preventDefault={() => navigate(item)}>
+<a
+  href={item.url}
+  title={_("item.desc", item.name)}
+  class="item card"
+  class:selected
+  on:click|preventDefault={() => navigate(item)}
+>
   {#if visited}
-    <div class="item-visited" title="Recently visited">🕓</div>
+    <div class="item-visited" title={_("item.visited.desc")}>🕓</div>
   {/if}
   <div class="item-icon">
-    <Icon src={item.icon} alt={item.name + " logo"} />
+    <Icon src={item.icon} alt={_("item.icon.alt", item.name)} />
   </div>
   <div class="item-name">{item.name}</div>
   <div class="item-description">{item.description}</div>

@@ -1,8 +1,10 @@
 <script>
   import { get } from "svelte/store";
+
+  import _ from "../lib/i18n";
   import { items, query, results, selectedResultItem } from "../lib/store";
-  import ItemsGrid from "./ItemsGrid.svelte";
   import { fuzzyMatch } from "../lib/fuzzy";
+  import ItemsGrid from "./ItemsGrid.svelte";
 
   /*
    * Filter results when search query is updated.
@@ -40,7 +42,7 @@
   {#if $results?.length}
     <ItemsGrid items={$results} selectedItem={$selectedResultItem} />
   {:else}
-    <div class="no-results">No result found for "{$query}"</div>
+    <div class="no-results">{_("results.none", $query)}</div>
   {/if}
 {/if}
 

@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
 
+  import _ from "./lib/i18n";
   import { config } from "./lib/store";
   import Logo from "./components/Logo.svelte";
   import SearchBar from "./components/SearchBar.svelte";
@@ -15,7 +16,7 @@
     const res = await fetch("config.json");
     const cfg = await res.json();
     config.set(cfg);
-    document.title = cfg.title ?? "Index";
+    document.title = cfg.title ?? _("title");
   });
 </script>
 
