@@ -52,6 +52,7 @@ button {
   border: none;
   outline: none;
   margin: 0;
+  line-height: normal;
   color: var(--text-color);
 }
 

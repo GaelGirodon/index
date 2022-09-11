@@ -30,16 +30,16 @@
     <div class="item-visited" title={_("item.visited.desc")}>🕓</div>
   {/if}
   <div class="item-icon">
-    <Icon src={item.icon} alt={_("item.icon.alt", item.name)} />
+    <Icon src={item.icon} />
   </div>
-  <div class="item-name">{item.name}</div>
-  <div class="item-description">{item.description}</div>
+  <div class="item-name">{item.name ?? ""}</div>
+  <div class="item-description">{item.description ?? ""}</div>
 </a>
 
 <style>
   .item {
-    padding: 16px;
-    width: calc((100% - (var(--items-cols) - 1) * 16px) / var(--items-cols) - 32px);
+    padding: 22px 18px;
+    width: calc((100% - (var(--items-cols) - 1) * 18px) / var(--items-cols) - 32px);
     text-align: center;
     transition: color 0.25s ease, background-color 0.25s ease;
   }
@@ -63,18 +63,20 @@
   /* Icon */
   .item-icon {
     height: 48px;
-    margin: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  .item-icon :global(img) {
+  .item-icon :global(.icon) {
+    width: 90%;
     height: 40px;
-    max-width: 80px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
   }
-  .item-icon :global(span) {
-    font-size: xx-large;
-    margin-top: -2px;
+  .item-icon :global(.icon.emoji) {
+    font-size: 35px;
+    margin-top: -5px;
   }
 
   /* Name */

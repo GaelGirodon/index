@@ -4,18 +4,12 @@
    * @type {string}
    */
   export let src;
-
-  /**
-   * Alternative text
-   * @type {string}
-   */
-  export let alt;
 </script>
 
-{#if src?.length <= 4}
-  <span class="icon">{src}</span>
+{#if src && src.length <= 4}
+  <div class="icon emoji">{src}</div>
 {:else if src?.match(/^(\w+:\/\/|data:image\/)/)}
-  <img {src} {alt} class="icon" />
+  <div class="icon" style={`background-image: url("${src}")`} />
 {:else}
-  <span class="icon">🌐</span>
+  <div class="icon emoji">🌐</div>
 {/if}

@@ -89,8 +89,8 @@
   >
     {#each $config.indexes as index (index.name)}
       <option value={index}>
-        {index.icon}
-        {index.name}
+        {index.icon ?? ""}
+        {index.name ?? ""}
       </option>
     {/each}
   </select>
@@ -123,6 +123,13 @@
     font-size: large;
     padding: 14px 18px;
   }
+  .search-bar select {
+    background-color: var(--card-color);
+    padding-right: 0;
+  }
+  .search-bar select:disabled {
+    appearance: none;
+  }
   .search-bar .search-icon {
     width: 0;
     display: flex;
@@ -139,9 +146,5 @@
     padding-left: 46px;
     flex-grow: 1;
     z-index: 1;
-  }
-  .search-bar select {
-    background-color: var(--card-color);
-    padding-right: 0;
   }
 </style>

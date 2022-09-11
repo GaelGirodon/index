@@ -24,8 +24,8 @@
 {#if opened}
   <div class="settings card" transition:fly={{ y: -32, duration: 250 }}>
     <div class="title">{_("settings.title")}</div>
-    <button class="btn" title={_("settings.forget-me.desc")} on:click={forget}>
-      🗑️ {_("settings.forget-me")}
+    <button class="btn" title={_("settings.clear-data.desc")} on:click={forget}>
+      🗑️ {_("settings.clear-data")}
     </button>
     {#if $config.source}
       <a class="btn" title={_("settings.contribute.desc")} href={$config.source}>

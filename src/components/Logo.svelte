@@ -3,20 +3,21 @@
   import { config, query } from "../lib/store";
 </script>
 
-<div class="spacer" class:offset={!$query} />
-{#if $config.logo}
-  <img src={$config.logo} alt={_("logo.alt")} class="logo" />
-{/if}
+<div class="logo" class:offset={!$query}>
+  {#if $config.logo}
+    <img src={$config.logo} alt={_("logo.alt")} />
+  {/if}
+</div>
 
 <style>
-  .spacer {
+  .logo {
     margin-top: 32px;
     transition: margin-top 0.25s ease;
   }
-  .spacer.offset {
+  .logo.offset {
     margin-top: 20vh;
   }
-  .logo {
+  .logo img {
     max-width: 350px;
     max-height: 200px;
   }

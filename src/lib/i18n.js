@@ -57,10 +57,6 @@ const strings = {
     "en": "Navigate to {}",
     "fr": "Accéder à {}"
   },
-  "item.icon.alt": {
-    "en": "{} logo",
-    "fr": "Logo de {}"
-  },
   "item.visited.desc": {
     "en": "Recently visited",
     "fr": "Récemment visité"
@@ -73,12 +69,12 @@ const strings = {
     "en": "Settings",
     "fr": "Paramètres"
   },
-  "settings.forget-me": {
-    "en": "Forget me",
-    "fr": "Oubliez-moi"
+  "settings.clear-data": {
+    "en": "Clear data",
+    "fr": "Effacer les données"
   },
-  "settings.forget-me.desc": {
-    "en": "Clear local data and reload",
+  "settings.clear-data.desc": {
+    "en": "Clear local data and reload the page",
     "fr": "Effacer les données locales et recharger la page"
   },
   "settings.contribute": {

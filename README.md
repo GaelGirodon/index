@@ -8,7 +8,7 @@ featuring:
 - Saving of recently visited websites
 - 🇫🇷 French and 🇬🇧 English translations
 
-> _Use case:_ create an entrypoint page for personal or company web tools
+> **Use case:** create an entrypoint page for personal or company web tools
 > and resources that can be set as a browser home or new tab page.
 
 ## Install
