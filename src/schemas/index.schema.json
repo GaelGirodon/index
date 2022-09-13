@@ -14,8 +14,8 @@
         "description": "Index item icon: URL, data string or emoji unicode character",
         "type": "string"
       },
-      "tags": {
-        "description": "Index item additional tags (taken into account for search)",
+      "keywords": {
+        "description": "Index item additional keywords (taken into account for search)",
         "type": "array",
         "items": {
           "type": "string",

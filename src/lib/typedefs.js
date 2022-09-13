@@ -29,7 +29,7 @@
  *
  * @property {string} name Index item display name: a short string
  * @property {string} icon Index item icon: URL, data string or emoji unicode character
- * @property {string[]} [tags] Index item additional tags (taken into account for search)
+ * @property {string[]} [keywords] Index item additional keywords (taken into account for search)
  * @property {string} [description] Index item short description
  * @property {string} url Index item resource URL
  */

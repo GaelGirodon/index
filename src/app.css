@@ -28,6 +28,7 @@ body {
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  --cols: 4;
 }
 
 .card {
@@ -61,6 +62,31 @@ a {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
+}
+
+@media screen and (max-width: 512px) {
+  #app {
+    --cols: 1;
+  }
+}
+
+@media screen and (min-width: 513px) and (max-width: 768px) {
+  #app {
+    --cols: 2;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  #app {
+    --cols: 3;
+  }
+}
+
+@media screen and (min-width: 1537px) {
+  #app {
+    max-width: 1280px;
+    --cols: 5;
+  }
 }
 
 @media (prefers-color-scheme: dark) {

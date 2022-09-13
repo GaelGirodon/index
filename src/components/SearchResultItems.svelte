@@ -17,10 +17,7 @@
    */
   function search(q) {
     const newResults = get(items)
-      .map((item) => ({
-        item,
-        score: fuzzyMatch(itemToString(item), q.toLowerCase()),
-      }))
+      .map((item) => ({ item, score: getScore(item, q) }))
       .filter((i) => i.score > 0)
       .sort((a, b) => b.score - a.score)
       .map((m) => m.item);
@@ -29,12 +26,16 @@
   }
 
   /**
-   * Build the item string representation to search a match in it.
-   * @param {Item} item The item
-   * @returns {string} String representation
+   * Compute match score.
+   * @param {Item} item The item to test
+   * @param {string} query Search query
+   * @return Match score
    */
-  function itemToString(item) {
-    return [item.name, ...item.tags].map((i) => i.toLowerCase()).join(" ");
+  function getScore(item, query) {
+    const q = query.toLowerCase();
+    const keywords = item.keywords || [];
+    return fuzzyMatch(item.name.toLowerCase(), q) +
+      (keywords.some((k) => k.toLowerCase().includes(q)) ? q.length : 0);
   }
 </script>
 

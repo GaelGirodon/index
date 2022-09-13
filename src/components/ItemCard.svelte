@@ -39,7 +39,7 @@
 <style>
   .item {
     padding: 22px 18px;
-    width: calc((100% - (var(--items-cols) - 1) * 18px) / var(--items-cols) - 32px);
+    width: calc((100% - (var(--cols) - 1) * 16px) / var(--cols) - 2 * 18px);
     text-align: center;
     transition: color 0.25s ease, background-color 0.25s ease;
   }

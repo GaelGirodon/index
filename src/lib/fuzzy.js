@@ -13,7 +13,14 @@ const initialStartBonus = 3;
  * Maximum bonus score given when multiple consecutive characters match.
  * @type {number}
  */
-const maxConsecutiveBonus = 3;
+const maxConsecutiveBonus = 6;
+
+/**
+ * Value to add to the consecutive bonus for each consecutive
+ * character match, to reward them incrementally.
+ * @type {number}
+ */
+const consecutiveBonusIncr = 2;
 
 /**
  * Match the search and the value using a fuzzy search algorithm.
@@ -31,7 +38,8 @@ export function fuzzyMatch(value, search) {
     if (value[i] === search[pos]) {
       score += 1 // Basic match point
         + Math.max(0, startBonus) // Bonus when matching from a word start
-        + Math.min(consecutiveBonus++, maxConsecutiveBonus); // Consecutive match bonus
+        + Math.min(consecutiveBonus, maxConsecutiveBonus); // Consecutive match bonus
+      consecutiveBonus += consecutiveBonusIncr;
       pos++;
     } else {
       // No match: disabling the consecutive bonus

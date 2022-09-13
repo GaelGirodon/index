@@ -22,7 +22,7 @@
 </script>
 
 <div class="items">
-  {#each items as item (item.name)}
+  {#each items as item (item.url)}
     <ItemCard
       {item}
       selected={selectedItem === item}
@@ -41,22 +41,5 @@
     justify-content: center;
     gap: 16px;
     flex-wrap: wrap;
-    --items-cols: 4;
-  }
-
-  @media screen and (max-width: 512px) {
-    .items {
-      --items-cols: 1;
-    }
-  }
-  @media screen and (min-width: 513px) and (max-width: 768px) {
-    .items {
-      --items-cols: 2;
-    }
-  }
-  @media screen and (min-width: 769px) and (max-width: 1023px) {
-    .items {
-      --items-cols: 3;
-    }
   }
 </style>
