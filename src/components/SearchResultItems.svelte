@@ -2,7 +2,7 @@
   import { get } from "svelte/store";
 
   import _ from "../lib/i18n";
-  import { items, query, results, selectedResultItem } from "../lib/store";
+  import { config, items, query, results, selectedResultItem } from "../lib/store";
   import { fuzzyMatch } from "../lib/fuzzy";
   import ItemsGrid from "./ItemsGrid.svelte";
 
@@ -43,14 +43,25 @@
   {#if $results?.length}
     <ItemsGrid items={$results} selectedItem={$selectedResultItem} />
   {:else}
-    <div class="no-results">{_("results.none", $query)}</div>
+    <div class="no-results">
+      <p>{_("results.none", $query)}</p>
+      {#if $config.source}
+        <a class="btn" title={_("results.contribute")} href={$config.source}>
+          📝 {_("results.contribute")}
+        </a>
+      {/if}
+    </div>
   {/if}
 {/if}
 
 <style>
   .no-results {
-    margin-top: 48px;
+    margin-top: 64px;
     font-size: large;
     color: var(--text-light-color);
+  }
+
+  .btn {
+    margin: 32px auto 0;
   }
 </style>

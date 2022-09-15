@@ -60,8 +60,27 @@ button {
 button,
 a {
   text-decoration: none;
-  color: inherit;
+  color: var(--text-color);
   cursor: pointer;
+}
+
+.btn {
+  display: block;
+  width: fit-content;
+  padding: 8px 12px;
+  background-color: var(--button-color);
+  border: solid 1px var(--button-active-color);
+  border-radius: 4px;
+  font-size: 14px;
+  transition: background-color 0.15s ease;
+}
+
+.btn:hover {
+  background-color: var(--button-hover-color);
+}
+
+.btn:active {
+  background-color: var(--button-active-color);
 }
 
 @media screen and (max-width: 512px) {

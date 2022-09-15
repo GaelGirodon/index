@@ -11,7 +11,7 @@
 
 <style>
   .logo {
-    margin-top: 32px;
+    margin-top: 48px;
     transition: margin-top 0.25s ease;
   }
   .logo.offset {

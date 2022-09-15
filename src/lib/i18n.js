@@ -65,6 +65,10 @@ const strings = {
     "en": "No result found for \"{}\"",
     "fr": "Aucun résultat trouvé pour \"{}\""
   },
+  "results.contribute": {
+    "en": "Contribute to this page",
+    "fr": "Contribuer à cette page"
+  },
   "settings.title": {
     "en": "Settings",
     "fr": "Paramètres"

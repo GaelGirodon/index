@@ -29,7 +29,7 @@
     </button>
     {#if $config.source}
       <a class="btn" title={_("settings.contribute.desc")} href={$config.source}>
-        🖊️ {_("settings.contribute")}
+        📝 {_("settings.contribute")}
       </a>
     {/if}
   </div>
@@ -81,20 +81,6 @@
     margin-top: -2px;
   }
   .settings .btn {
-    display: block;
-    width: fit-content;
     margin-top: 8px;
-    padding: 8px 12px 8px 10px;
-    background-color: var(--button-color);
-    border: solid 1px var(--button-active-color);
-    border-radius: 4px;
-    font-size: 14px;
-    transition: background-color 0.15s ease;
-  }
-  .settings .btn:hover {
-    background-color: var(--button-hover-color);
-  }
-  .settings .btn:active {
-    background-color: var(--button-active-color);
   }
 </style>
