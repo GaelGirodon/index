@@ -78,22 +78,23 @@
 </script>
 
 <div class="search-bar card">
-  <!-- Index selector -->
-  <select
-    name="index"
-    id="index-select"
-    title={_("index-select.desc")}
-    bind:value={selectedIndex}
-    on:change={() => loadIndex(selectedIndex)}
-    disabled={$config.indexes?.length <= 1}
-  >
-    {#each $config.indexes as index (index.name)}
-      <option value={index}>
-        {index.icon ?? ""}
-        {index.name ?? ""}
-      </option>
-    {/each}
-  </select>
+  {#if $config.indexes?.length > 1}
+    <!-- Index selector -->
+    <select
+      name="index"
+      id="index-select"
+      title={_("index-select.desc")}
+      bind:value={selectedIndex}
+      on:change={() => loadIndex(selectedIndex)}
+    >
+      {#each $config.indexes as index (index.name)}
+        <option value={index}>
+          {index.icon ?? ""}
+          {index.name ?? ""}
+        </option>
+      {/each}
+    </select>
+  {/if}
   <!-- Search box -->
   <div class="search-icon">
     <img src={search} alt={_("search-bar.icon.alt")} />
@@ -126,9 +127,7 @@
   .search-bar select {
     background-color: var(--card-color);
     padding-right: 0;
-  }
-  .search-bar select:disabled {
-    appearance: none;
+    margin-right: -10px;
   }
   .search-bar .search-icon {
     width: 0;
@@ -137,13 +136,13 @@
   }
   .search-bar .search-icon img {
     width: 18px;
-    margin-left: 16px;
+    margin-left: 24px;
     opacity: 0.5;
     filter: invert(var(--img-filter-invert));
   }
   .search-bar input {
     background-color: transparent;
-    padding-left: 46px;
+    padding-left: 54px;
     flex-grow: 1;
     z-index: 1;
   }
