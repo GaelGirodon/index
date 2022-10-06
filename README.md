@@ -1,5 +1,8 @@
 # Index
 
+[![release](https://img.shields.io/github/v/release/GaelGirodon/index?style=flat-square)](https://github.com/GaelGirodon/index/releases/latest)
+[![license](https://img.shields.io/github/license/GaelGirodon/index?color=blue&style=flat-square)](./LICENSE)
+
 A simple, lightweight (~14 KiB _gzipped_) and static websites index page
 featuring:
 

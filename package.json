@@ -1,7 +1,8 @@
 {
   "name": "index",
-  "private": true,
+  "description": "A simple, lightweight and static websites index page",
   "version": "0.1.0",
+  "private": true,
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,9 +10,9 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^1.0.5",
+    "@sveltejs/vite-plugin-svelte": "^1.0.8",
     "normalize.css": "^8.0.1",
-    "svelte": "^3.50.0",
-    "vite": "^3.1.0"
+    "svelte": "^3.50.1",
+    "vite": "^3.1.6"
   }
 }

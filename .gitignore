@@ -1,10 +1,8 @@
 # .gitignore
 
-node_modules/
-public/*.json
-logs/
-*.log*
-dist/
-*.tar.gz
 .idea/
 .vscode/
+node_modules/
+public/*.json
+dist/
+*.tar.gz
