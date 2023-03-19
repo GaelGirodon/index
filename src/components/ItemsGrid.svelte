@@ -1,5 +1,6 @@
 <script>
   import { visitedItems } from "../lib/store";
+
   import ItemCard from "./ItemCard.svelte";
 
   /**

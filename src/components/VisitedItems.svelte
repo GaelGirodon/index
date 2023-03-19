@@ -1,8 +1,9 @@
 <script>
   import { onMount } from "svelte";
 
-  import { query, visitedItems } from "../lib/store";
   import * as storage from "../lib/storage";
+  import { query, visitedItems } from "../lib/store";
+
   import ItemsGrid from "./ItemsGrid.svelte";
 
   /**

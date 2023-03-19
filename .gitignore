@@ -2,7 +2,7 @@
 
 .idea/
 .vscode/
-node_modules/
-public/*.json
 dist/
+node_modules/
+public/*
 *.tar.gz

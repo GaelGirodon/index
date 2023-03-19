@@ -1,6 +1,7 @@
 <script>
   import _ from "../lib/i18n";
   import { navigate } from "../lib/navigation";
+
   import Icon from "./Icon.svelte";
 
   /**

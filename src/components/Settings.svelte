@@ -2,10 +2,13 @@
   import { fly } from "svelte/transition";
 
   import _ from "../lib/i18n";
-  import { config } from "../lib/store";
   import { clear } from "../lib/storage";
-  import settings from "../assets/settings.svg";
+  import { config } from "../lib/store";
+
   import close from "../assets/close.svg";
+  import settings from "../assets/settings.svg";
+
+  import * as meta from "../../package.json";
 
   /**
    * true if the settings panel is displayed.
@@ -32,6 +35,9 @@
         📝 {_("settings.contribute")}
       </a>
     {/if}
+    <a class="meta" href={meta.homepage}>
+      {meta.name} {meta.version}
+    </a>
   </div>
 {/if}
 
@@ -82,5 +88,12 @@
   }
   .settings .btn {
     margin-top: 8px;
+  }
+  .settings .meta {
+    display: block;
+    margin: 12px 0 -2px 0;
+    font-size: small;
+    text-transform: capitalize;
+    color: var(--text-light-color);
   }
 </style>

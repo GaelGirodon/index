@@ -2,9 +2,10 @@
   import { get } from "svelte/store";
 
   import _ from "../lib/i18n";
-  import { config, items, query, results, selectedResultItem } from "../lib/store";
-  import * as storage from "../lib/storage";
   import { navigate } from "../lib/navigation";
+  import * as storage from "../lib/storage";
+  import { config, items, query, results, selectedResultItem } from "../lib/store";
+
   import search from "../assets/search.svg";
 
   /**

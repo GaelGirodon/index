@@ -1,9 +1,10 @@
 <script>
   import { get } from "svelte/store";
 
+  import { fuzzyMatch } from "../lib/fuzzy";
   import _ from "../lib/i18n";
   import { config, items, query, results, selectedResultItem } from "../lib/store";
-  import { fuzzyMatch } from "../lib/fuzzy";
+
   import ItemsGrid from "./ItemsGrid.svelte";
 
   /*

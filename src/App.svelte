@@ -3,11 +3,12 @@
 
   import _ from "./lib/i18n";
   import { config } from "./lib/store";
+
   import Logo from "./components/Logo.svelte";
   import SearchBar from "./components/SearchBar.svelte";
-  import VisitedItems from "./components/VisitedItems.svelte";
   import SearchResultItems from "./components/SearchResultItems.svelte";
   import Settings from "./components/Settings.svelte";
+  import VisitedItems from "./components/VisitedItems.svelte";
 
   /**
    * Load configuration.
