@@ -1,6 +1,6 @@
 {
   "name": "index",
-  "version": "0.2.0-dev",
+  "version": "0.2.0",
   "description": "A simple, lightweight and static websites index page",
   "homepage": "https://github.com/GaelGirodon/index",
   "license": "GPL-3.0-or-later",
