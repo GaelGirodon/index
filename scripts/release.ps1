@@ -4,8 +4,8 @@
 #
 
 # Bump the version number
-npm version minor --git-tag-version "false"
-$version = (Get-Content -Raw package.json | ConvertFrom-Json).version
+$env:npm_config_git_tag_version = "false"
+$version = (npm version minor).trim("v")
 
 # Build and package
 npm update --save
@@ -19,3 +19,4 @@ popd
 git add package*.json *.md
 git commit -m "Release $version"
 git tag -a "$version" -m "$version"
+npm version "$(npm version minor)-dev"
