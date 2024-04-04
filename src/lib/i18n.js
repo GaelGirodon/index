@@ -13,7 +13,7 @@ const language = ["en", "fr"]
  * Get the string associated to the given key
  * for the current navigator language.
  * @param {string} key String key
- * @param {string[]} args String value arguments
+ * @param {string} args String value arguments
  * @returns String value
  */
 export default function getString(key, ...args) {
