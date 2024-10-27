@@ -12,18 +12,19 @@
    * Currently selected index
    * @type {?Index}
    */
-  let selectedIndex;
+  let selectedIndex = $state();
 
   /**
    * Search input DOM element
+   * @type {HTMLInputElement}
    */
-  let searchInput;
+  let searchInput = $state();
 
   /**
    * Search query text value (local)
    * @type {string}
    */
-  let localQuery;
+  let localQuery = $state();
 
   /**
    * true if the focus has already been set
@@ -86,7 +87,7 @@
       id="index-select"
       title={_("index-select.desc")}
       bind:value={selectedIndex}
-      on:change={() => loadIndex(selectedIndex)}
+      onchange={() => loadIndex(selectedIndex)}
     >
       {#each $config.indexes as index (index.name)}
         <option value={index}>
@@ -106,8 +107,8 @@
     placeholder={_("search-bar.placeholder")}
     bind:value={localQuery}
     bind:this={searchInput}
-    on:input={() => query.set(localQuery)}
-    on:keydown={handleKeys}
+    oninput={() => query.set(localQuery)}
+    onkeydown={handleKeys}
     disabled={selectedIndex == null}
   />
 </div>

@@ -1,23 +1,20 @@
 <script>
+  import { preventDefault } from "svelte/legacy";
+
   import _ from "../lib/i18n";
   import { navigate } from "../lib/navigation";
 
   import Icon from "./Icon.svelte";
 
   /**
-   * Item to display in the card
+   * @typedef Props
+   * @property {Item} item Item to display in the card
+   * @property {boolean} visited Mark the item as already visited
+   * @property {boolean} selected Mark the item as selected
    */
-  export let item;
 
-  /**
-   * Mark the item as already visited
-   */
-  export let visited = false;
-
-  /**
-   * Mark the item as selected
-   */
-  export let selected = false;
+  /** @type {Props} */
+  let { item, visited = false, selected = false } = $props();
 </script>
 
 <a
@@ -25,7 +22,7 @@
   title={_("item.desc", item.name)}
   class="item card"
   class:selected
-  on:click|preventDefault={() => navigate(item)}
+  onclick={preventDefault(() => navigate(item))}
 >
   {#if visited}
     <div class="item-visited" title={_("item.visited.desc")}>🕓</div>

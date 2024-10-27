@@ -13,7 +13,7 @@
   /**
    * true if the settings panel is displayed.
    */
-  let opened = false;
+  let opened = $state(false);
 
   /**
    * Clear local storage and reload.
@@ -27,7 +27,7 @@
 {#if opened}
   <div class="settings card" transition:fly={{ y: -32, duration: 250 }}>
     <div class="title">{_("settings.title")}</div>
-    <button class="btn" title={_("settings.clear-data.desc")} on:click={forget}>
+    <button class="btn" title={_("settings.clear-data.desc")} onclick={forget}>
       🗑️ {_("settings.clear-data")}
     </button>
     {#if $config.source}
@@ -43,7 +43,7 @@
 
 <button
   class="settings-toggle"
-  on:click={() => (opened = !opened)}
+  onclick={() => (opened = !opened)}
   title={opened ? _("settings.toggle.close") : _("settings.toggle.open")}
 >
   <img src={opened ? close : settings} alt={_("settings.toggle.icon.alt")} />

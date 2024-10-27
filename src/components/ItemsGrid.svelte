@@ -4,22 +4,15 @@
   import ItemCard from "./ItemCard.svelte";
 
   /**
-   * Items to display in the grid
-   * @type {Item[]}
+   * @typedef Props
+   * @property {Item[]} items Items to display in the grid
+   * @property {boolean} visited Mark all items as visited without
+   * checking individually if they are in the visited items.
+   * @property {Item} [selectedItem] Currently selected item
    */
-  export let items;
 
-  /**
-   * Mark all items as visited without checking individually
-   * if they are in the visited items.
-   */
-  export let visited = false;
-
-  /**
-   * Currently selected item
-   * @type {?Item}
-   */
-  export let selectedItem = null;
+  /** @type {Props} */
+  let { items, visited = false, selectedItem = null } = $props();
 </script>
 
 <div class="items">
