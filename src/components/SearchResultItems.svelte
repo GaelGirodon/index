@@ -36,7 +36,8 @@
     const q = query.toLowerCase();
     const keywords = item.keywords || [];
     return fuzzyMatch(item.name.toLowerCase(), q) +
-      (keywords.some((k) => k.toLowerCase().includes(q)) ? q.length : 0);
+      (keywords.some((k) => k.toLowerCase().includes(q)) ? q.length : 0) +
+      (keywords.includes("_default") ? 1 : 0);
   }
 </script>
 

@@ -19,5 +19,12 @@
     "keywords": ["documentation", "book"],
     "description": "Company documentations",
     "url": "https://docs.company.org"
+  },
+  {
+    "name": "Search engine",
+    "icon": "🔍",
+    "keywords": ["search", "_default"],
+    "description": "Search here by default",
+    "url": "https://search.company.org/?q=%s"
   }
 ]

@@ -15,7 +15,7 @@
         "type": "string"
       },
       "keywords": {
-        "description": "Index item additional keywords (taken into account for search)",
+        "description": "Index item additional keywords (taken into account for search, include '_default' keyword to always match)",
         "type": "array",
         "items": {
           "type": "string",
@@ -27,7 +27,7 @@
         "type": "string"
       },
       "url": {
-        "description": "Index item resource URL",
+        "description": "Index item resource URL (include %s to pass the user query)",
         "type": "string"
       }
     },

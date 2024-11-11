@@ -3,7 +3,7 @@
 [![release](https://img.shields.io/github/v/release/GaelGirodon/index?style=flat-square)](https://github.com/GaelGirodon/index/releases/latest)
 [![license](https://img.shields.io/github/license/GaelGirodon/index?color=blue&style=flat-square)](./LICENSE)
 
-A simple, lightweight (~14 KiB _gzipped_) and static websites index page
+A simple, lightweight (~17 KiB _gzipped_) and static websites index page
 featuring:
 
 - A search bar using a fuzzy search algorithm
@@ -29,7 +29,7 @@ curl -sL "$DOWNLOAD_URL/index.tar.gz" | tar xvz
   ([schema](./src/schemas/index.schema.json))
 - Test the index page with a local web server (e.g. `php -S localhost:8080`,
   `npx http-server`, etc.)
-- Deploy files to a static web server (e.g. GitHub/GitLab Pages)
+- Deploy files to a static web server (e.g. GitHub/GitLab Pages, Nginx, etc.)
 
 ## Usage
 

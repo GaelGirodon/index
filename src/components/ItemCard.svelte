@@ -3,6 +3,7 @@
 
   import _ from "../lib/i18n";
   import { navigate } from "../lib/navigation";
+  import { query } from "../lib/store.js";
 
   import Icon from "./Icon.svelte";
 
@@ -22,7 +23,7 @@
   title={_("item.desc", item.name)}
   class="item card"
   class:selected
-  onclick={preventDefault(() => navigate(item))}
+  onclick={preventDefault(() => navigate(item, $query))}
 >
   {#if visited}
     <div class="item-visited" title={_("item.visited.desc")}>🕓</div>

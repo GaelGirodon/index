@@ -68,7 +68,7 @@
       const resultItems = get(results);
       const item = get(selectedResultItem);
       if (event.key === "Enter" && item) {
-        navigate(item);
+        navigate(item, $query);
       } else if ((event.key === "ArrowDown" || event.key === "ArrowUp") && resultItems && item) {
         const currentIndex = resultItems.findIndex((i) => i === item);
         const offset = event.key === "ArrowDown" ? 1 : -1;

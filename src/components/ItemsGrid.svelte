@@ -6,7 +6,7 @@
   /**
    * @typedef Props
    * @property {Item[]} items Items to display in the grid
-   * @property {boolean} visited Mark all items as visited without
+   * @property {boolean} [visited] Mark all items as visited without
    * checking individually if they are in the visited items.
    * @property {Item} [selectedItem] Currently selected item
    */
