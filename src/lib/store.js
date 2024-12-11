@@ -3,7 +3,7 @@
  * Application global store
  */
 
-import { writable } from "svelte/store";
+import { derived, writable } from "svelte/store";
 
 /**
  * Application configuration
@@ -28,6 +28,17 @@ export const visitedItems = writable([]);
  * @type {import("svelte/store").Writable<string>}
  */
 export const query = writable("");
+
+/**
+ * Parsed user search query (`local` is used for the search in this tool,
+ * `target` is the query to be sent to the selected search engine)
+ * @type {import("svelte/store").Readable<{local: string, target: string}>}
+ */
+export const parsedQuery = derived(query, (q) => {
+    const parts = (q ?? "").split(":", 2);
+    return { local: parts[0].trim(), target: parts.at(-1).trim() };
+  }
+);
 
 /**
  * Search results

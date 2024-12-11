@@ -18,11 +18,7 @@ const language = ["en", "fr"]
  */
 export default function getString(key, ...args) {
   let value = strings?.[key]?.[language] ?? "";
-  if (value.includes("{}")) {
-    let i = 0;
-    value = value.replace(/\{}/g, () => args[i++]);
-  }
-  return value;
+  return value.replace(/\{([0-9]+)}/g, (_, i) => args[i] ?? "");
 }
 
 /**
@@ -54,17 +50,25 @@ const strings = {
     "en": "Search",
     "fr": "Rechercher"
   },
+  "search-bar.hint.target-query": {
+    "en": ": {0} query",
+    "fr": " : requête {0}"
+  },
   "item.desc": {
-    "en": "Navigate to {}",
-    "fr": "Accéder à {}"
+    "en": "Navigate to {0}",
+    "fr": "Accéder à {0}"
+  },
+  "item.desc.search": {
+    "en": "Search for \"{1}\" on {0}",
+    "fr": "Rechercher \"{1}\" sur {0}"
   },
   "item.visited.desc": {
     "en": "Recently visited",
     "fr": "Récemment visité"
   },
   "results.none": {
-    "en": "No result found for \"{}\"",
-    "fr": "Aucun résultat trouvé pour \"{}\""
+    "en": "No result found for \"{0}\"",
+    "fr": "Aucun résultat trouvé pour \"{0}\""
   },
   "results.contribute": {
     "en": "Contribute to this page",

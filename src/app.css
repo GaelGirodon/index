@@ -1,6 +1,7 @@
 :root {
   --text-color: #213547;
   --text-light-color: #848588;
+  --text-lighter-color: #9c9da1;
   --background-color: #f9f9f9;
   --primary-color: #0061e0;
   --card-color: #ffffff;
@@ -111,7 +112,8 @@ a {
 @media (prefers-color-scheme: dark) {
   :root {
     --text-color: #fdfdfd;
-    --text-light-color: #f0f0f0;
+    --text-light-color: #e6e6e6;
+    --text-lighter-color: #a2a2a2;
     --background-color: #242424;
     --card-color: #454545;
     --card-hover-color: #555555;

@@ -3,7 +3,7 @@
 
   import _ from "../lib/i18n";
   import { navigate } from "../lib/navigation";
-  import { query } from "../lib/store.js";
+  import { parsedQuery } from "../lib/store.js";
 
   import Icon from "./Icon.svelte";
 
@@ -20,10 +20,10 @@
 
 <a
   href={item.url}
-  title={_("item.desc", item.name)}
+  title={_(item.url.includes("%s") ? "item.desc.search" : "item.desc", item.name, $parsedQuery.target)}
   class="item card"
   class:selected
-  onclick={preventDefault(() => navigate(item, $query))}
+  onclick={preventDefault(() => navigate(item, $parsedQuery.target))}
 >
   {#if visited}
     <div class="item-visited" title={_("item.visited.desc")}>🕓</div>

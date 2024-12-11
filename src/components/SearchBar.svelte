@@ -4,7 +4,7 @@
   import _ from "../lib/i18n";
   import { navigate } from "../lib/navigation";
   import * as storage from "../lib/storage";
-  import { config, items, query, results, selectedResultItem } from "../lib/store";
+  import { config, items, parsedQuery, query, results, selectedResultItem } from "../lib/store";
 
   import search from "../assets/search.svg";
 
@@ -21,10 +21,20 @@
   let searchInput = $state();
 
   /**
-   * Search query text value (local)
+   * Search query text value
    * @type {string}
    */
-  let localQuery = $state();
+  let rawQuery = $state("");
+
+  /**
+   * Hint displayed dynamically after the search query text
+   * @type {string}
+   */
+  let hint = $derived(
+    rawQuery && !rawQuery.includes(":") && $selectedResultItem?.url?.includes("%s")
+      ? _("search-bar.hint.target-query", $selectedResultItem.name)
+      : ""
+  );
 
   /**
    * true if the focus has already been set
@@ -68,7 +78,7 @@
       const resultItems = get(results);
       const item = get(selectedResultItem);
       if (event.key === "Enter" && item) {
-        navigate(item, $query);
+        navigate(item, $parsedQuery.target);
       } else if ((event.key === "ArrowDown" || event.key === "ArrowUp") && resultItems && item) {
         const currentIndex = resultItems.findIndex((i) => i === item);
         const offset = event.key === "ArrowDown" ? 1 : -1;
@@ -101,13 +111,16 @@
   <div class="search-icon">
     <img src={search} alt={_("search-bar.icon.alt")} />
   </div>
+  <div class="search-hint">
+    <span>{rawQuery}</span><span>{hint}</span>
+  </div>
   <input
     type="text"
     title={_("search-bar.desc")}
     placeholder={_("search-bar.placeholder")}
-    bind:value={localQuery}
+    bind:value={rawQuery}
     bind:this={searchInput}
-    oninput={() => query.set(localQuery)}
+    oninput={() => query.set(rawQuery)}
     onkeydown={handleKeys}
     disabled={selectedIndex == null}
   />
@@ -120,15 +133,12 @@
     width: 100%;
     max-width: 500px;
     margin: 40px auto 0;
-  }
-  .search-bar input,
-  .search-bar select {
     font-size: large;
-    padding: 14px 18px;
+    line-height: normal;
   }
   .search-bar select {
     background-color: var(--card-color);
-    padding-right: 0;
+    padding: 14px 0 14px 18px;
     margin-right: -10px;
   }
   .search-bar .search-icon {
@@ -142,9 +152,20 @@
     opacity: 0.5;
     filter: invert(var(--img-filter-invert));
   }
+  .search-bar .search-hint {
+    width: 0;
+    padding: 14px 0;
+    color: var(--text-lighter-color);
+    white-space: nowrap;
+    user-select: none;
+  }
+  .search-bar .search-hint span:first-of-type {
+    margin-left: 54px;
+    visibility: hidden;
+  }
   .search-bar input {
     background-color: transparent;
-    padding-left: 54px;
+    padding: 14px 14px 14px 54px;
     flex-grow: 1;
     z-index: 1;
   }

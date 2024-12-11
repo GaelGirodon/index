@@ -3,14 +3,14 @@
 
   import { fuzzyMatch } from "../lib/fuzzy";
   import _ from "../lib/i18n";
-  import { config, items, query, results, selectedResultItem } from "../lib/store";
+  import { config, items, parsedQuery, results, selectedResultItem } from "../lib/store";
 
   import ItemsGrid from "./ItemsGrid.svelte";
 
   /*
    * Filter results when search query is updated.
    */
-  query.subscribe((q) => search(q));
+  parsedQuery.subscribe((q) => search(q.local));
 
   /**
    * Search in current index items using a fuzzy search algorithm.
@@ -41,12 +41,12 @@
   }
 </script>
 
-{#if $query}
+{#if $parsedQuery.local}
   {#if $results?.length}
     <ItemsGrid items={$results} selectedItem={$selectedResultItem} />
   {:else}
     <div class="no-results">
-      <p>{_("results.none", $query)}</p>
+      <p>{_("results.none", $parsedQuery.local)}</p>
       {#if $config.source}
         <a class="btn" title={_("results.contribute")} href={$config.source}>
           📝 {_("results.contribute")}
